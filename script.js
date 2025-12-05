@@ -17,7 +17,7 @@
   const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   const STORAGE_KEY = 'mood-tracker-data';
   const PROFILE_KEY = 'mood-tracker-profile';
-  const FALLBACK_POEMS = [{ id:'fallback-1', title:'Fallback Calm', author:'System', text:'A gentle fallback poem that keeps the app running.', moodTags:['calm','content'] }];
+  const FALLBACK_POEMS = [{ id:'fallback-1', title:'Fallback Calm', author:'random words i though of', text:'this is a poem to bring you back, when you ask a life to track', moodTags:['calm','content'] }];
 
   // state
   let currentYear = new Date().getFullYear();
