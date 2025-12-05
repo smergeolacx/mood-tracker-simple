@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Year Mood Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="top-left">
+        <div class="year-controls mosaic-only">
+          <button id="prevYearBtn" class="btn small">←</button>
+          <h1 id="yearTitle">2025</h1>
+          <button id="nextYearBtn" class="btn small">→</button>
+        </div>
+      </div>
+
+      <div class="top-center">
+        <div class="view-buttons">
+          <button id="mosaicViewBtn" class="btn active">Mosaic View</button>
+          <button id="monthViewBtn" class="btn">Month View</button>
+        </div>
+        <p class="subtitle">“Great things are done by a series of small things brought together.” ~ Vincent Van Gogh</p>
+      </div>
+
+      <div class="top-right mosaic-only">
+  <div class="right-controls">
+    <button id="downloadMosaicBtn" class="btn small">Download Mosaic</button>
+
+    <!-- Profile icon (navigates to profile.html) -->
+    <a id="profileIconLink" class="profile-icon-link" href="profile.html" title="Profile">
+      <!-- simple person SVG, small and crisp -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 12c2.7614 0 5-2.2386 5-5s-2.2386-5-5-5-5 2.2386-5 5 2.2386 5 5 5z" fill="#333"/>
+        <path d="M4 20c0-3.3137 2.6863-6 6-6h4c3.3137 0 6 2.6863 6 6v1H4v-1z" fill="#333"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+
+    </header>
+
+    <main id="mainContent">
+      
+    </main>
+
+    <div id="emotionModal" class="modal hidden">
+      <div class="modal-content card">
+        <div class="modal-header">
+          <h3 id="emotionModalTitle">Choose emotion</h3>
+          <button id="emotionModalClose" class="btn">✕</button>
+        </div>
+
+        <div id="primaryEmotionGrid" class="grid-emotions"></div>
+
+        <div id="secondaryWrapper" class="hidden">
+          <button id="backToPrimary" class="btn small">← Back</button>
+          <div id="secondaryEmotionGrid" class="grid-emotions"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="poemModal" class="modal hidden">
+      <div class="modal-content card poem-card">
+        <div id="poemBadge" class="mood-badge"></div>
+        <h3 id="poemTitle"></h3>
+        <p id="poemAuthor" class="poem-author"></p>
+        <pre id="poemText" class="poem-text"></pre>
+
+        <div class="poem-actions">
+          <button id="editEntryBtn" class="btn">Edit Emotion</button>
+          <button id="deleteEntryBtn" class="btn danger">Delete Entry</button>
+        </div>
+
+        <button id="closePoemBtn" class="btn full">Close</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+:root{
+  --bg:#f5f5f5;
+  --card:#fff;
+  --muted:#666;
+  --accent:#333;
+  --danger:#f44336;
+  --shadow: 0 8px 32px rgba(0,0,0,0.08);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body,#mainContent{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#222;
+  padding:28px 16px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.app{max-width:1360px;margin:0 auto}
+
+.top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+.top-center{flex:1;text-align:center}
+.year-controls{display:flex;align-items:center;gap:12px;justify-content:center}
+h1{margin:0;font-weight:300;font-size:28px;letter-spacing:1px}
+.subtitle{margin:6px 0 0 0;color:var(--muted);font-weight:300;font-size:13px}
+
+.btn{
+  border:1px solid #ddd;
+  background:#fff;
+  padding:8px 12px;
+  cursor:pointer;
+  border-radius:6px;
+  font-size:13px;
+}
+.btn.small{padding:6px 10px;font-size:12px}
+.btn.full{width:100%}
+.btn.danger{background:var(--danger);color:#fff;border:none}
+.btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.view-buttons{display:inline-flex;gap:8px}
+
+.card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+
+
+.mosaic-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:1px;
+  background:#ddd;
+  max-width:1400px;margin:0 auto;padding:1px;
+}
+.mosaic-header{
+  background:#636363;padding:10px 6px;text-align:center;font-size:12px;font-weight:600;color:#f0f0f0
+}
+.mosaic-cell{
+  aspect-ratio:1;
+  background:#fff;
+  cursor:pointer;
+  transition:opacity .12s ease,transform .12s ease;
+}
+.mosaic-cell.invalid{background:#fafafa;opacity:.3;cursor:default}
+.mosaic-cell:hover{transform:scale(1.02)}
+
+
+.month-wrap{max-width:1200px;margin:0 auto}
+.calendar.card{padding:28px}
+.calendar-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.calendar-grid{display:grid;grid-template-columns:auto repeat(7,1fr);gap:6px}
+.calendar-week{padding:8px;font-size:11px;color:#999;display:flex;align-items:center;justify-content:center}
+.calendar-day{
+  aspect-ratio:1;border-radius:8px;border:2px solid #e5e5e5;padding:8px;font-size:14px;color:#333;display:flex;align-items:flex-start;justify-content:flex-end;cursor:pointer;transition:all .12s ease
+}
+.calendar-day.invalid{background:#fafafa;color:#ccc;cursor:default}
+.calendar-day:hover{border-color:#999}
+
+
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);z-index:1000}
+.modal.hidden{display:none}
+.modal-content{width:min(96%,760px);max-height:86vh;overflow:auto;border-radius:12px;padding:22px;background:var(--card)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+
+
+.grid-emotions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.emotion-btn{border:none;padding:18px;border-radius:10px;font-weight:700;cursor:pointer;transition:transform .12s ease}
+.emotion-btn:hover{transform:scale(1.03)}
+
+
+.poem-card{max-width:640px}
+.mood-badge{display:inline-block;padding:6px 10px;border-radius:6px;font-weight:700;margin-bottom:12px;color:#333}
+.poem-author{font-style:italic;color:var(--muted);margin-top:6px}
+.poem-text{white-space:pre-wrap;font-family:Georgia,serif;line-height:1.7;color:#444;margin:18px 0}
+.poem-actions{display:flex;gap:10px;}
+
+
+.hidden{display:none}
+.mosaic-only{display:inline-flex}
+@media (max-width:880px){
+  .grid-emotions{grid-template-columns:1fr}
+  .mosaic-grid{grid-template-columns:repeat(6,1fr)}
+  .mosaic-only{display:none}
+}
+
+
+/* ===== small additions: profile + download button layout ===== */
+.right-controls{display:flex;gap:8px;align-items:center}
+.profile-panel{position:fixed;right:18px;top:70px;width:280px;background:var(--card);z-index:1200;border-radius:10px;box-shadow:var(--shadow);padding:14px}
+.profile-panel h4{margin:0 0 8px 0;font-weight:600}
+.profile-row{display:flex;gap:10px;align-items:center}
+.profile-avatar{width:56px;height:56px;border-radius:10px;background:#f0f0f0;display:inline-flex;align-items:center;justify-content:center;overflow:hidden}
+.profile-avatar img{width:100%;height:100%;object-fit:cover}
+.profile-actions{margin-top:10px;display:flex;gap:8px}
+.small-input{width:100%;padding:8px;border:1px solid #e5e5e5;border-radius:8px}
+.hidden{display:none}
+
+/* Profile icon link in header */
+.profile-icon-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:8px;
+  border:1px solid transparent;
+  text-decoration:none;
+  background:transparent;
+}
+.profile-icon-link:hover{
+  background:rgba(0,0,0,0.04);
+  border-color:#e0e0e0;
+}
+.profile-icon-link svg{display:block}
